@@ -1,6 +1,24 @@
-*
-!ws1/*.c
-!*.txt
-!*.md
-!*.jpg
+# Ignore compiled files and system clutter
+*.o
+*.out
+*.obj
+a.out
+.DS_Store
 
+# Ignore other temporary or backup files
+*.swp
+*.tmp
+*.bak
+*~
+
+# Ignore build artifacts
+/build/
+/bin/
+/dist/
+
+# Ignore core dumps and debugger files
+core
+vgcore.*
+*.stackdump
+
+# Include everything else (source files, folders, docs, etc.)
