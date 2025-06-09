@@ -1,6 +1,6 @@
 ## About This Project
 
-This repository contains work and projects completed during the Infinity Labs “Open Lab” Cyber Researcher Program (07/2024–04/2025).
+This repository contains work and projects completed during a cyber researcher program (07/2024–04/2025).
 
 An intensive 2,500+ hour hands-on course structured in two parts:
 
