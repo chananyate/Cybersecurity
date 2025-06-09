@@ -1,0 +1,6 @@
+{
+  "python3_tests_ex3.py::test_machine_start_stop": true,
+  "python3_tests_ex3.py::test_machine_cost_calculation": true,
+  "python3_tests_ex3.py::test_tracker_total_cost": true,
+  "python3_tests_ex3.py::test_total_cost_with_mock": true
+}

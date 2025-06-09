@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding for proper display of characters -->
+    <meta charset="UTF-8">
+    <!-- Ensures the page is responsive and scales well on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title that appears in the browser tab -->
+    <title>Weather Forecast</title>
+    <style>
+        /* Basic styles for the body */
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f0;
+            color: #333;  /* Dark text color for readability *
+        }
+        /* Styles for the table */
+        table {
+            /* Table spans the full width of the page */
+            width: 100%;
+            border-collapse: collapse;  /* Collapses the borders for a cleaner look */
+            margin-top: 20px;  * Adds space between the table and other elements */
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #007FAF;
+            color: white;
+        }
+        /* Styles for images (weather icons) */
+        td img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header for the weather forecast page -->
+    <h1>Weather Forecast</h1>
+    <!-- Form to input the location (city or country) -->
+    <form method="post" action="/">
+        <label for="location">Enter a city or country:</label>
+        <input type="text" id="location" name="location" required>  <!-- Text input for location -->
+        <button type="submit">Get Weather</button>
+    </form>
+    <!-- Conditional block that only displays the weather table if data is available -->
+    {% if weather %}
+        <h2>Weather forecast for {{ location_name }}, {{ country }}</h2>
+        <!-- Table displaying the weather data -->
+        <table>
+            <thead>
+                <tr>
+                    <!-- Table headers for displaying the day, temperatures, humidity, etc. -->
+                    <th>Day</th>
+                    <th>Day Temperature (°C)</th>
+                    <th>Night Temperature (°C)</th>
+                    <th>Humidity (%)</th>
+                    <th>Description</th>
+                    <th>Icon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop over the weather data to create rows for each day's forecast -->
+                {% for date, data in weather %}
+                    <tr>
+                        <td>{{ date }}</td>  <!-- Displays the date of the forecast -->
+                        <td>{{ data.day_temp }}°C</td>
+                        <td>{{ data.night_temp if data.night_temp else "N/A" }}°C</td>
+                        <td>{{ data.humidity }}%</td>
+                        <td>{{ data.description }}</td>
+                        <td>
+                            <!-- Displays the weather icon (using the OpenWeatherMap icon URL) -->
+                            <img src="http://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="Weather Icon">
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>

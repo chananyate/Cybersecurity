@@ -1,0 +1,10 @@
+[
+  "python3_tests.py::TestBankAccount::test_multiple_transactions",
+  "python3_tests_ex2.py::test_multiple_transactions",
+  "python3_tests_ex3.py::test_machine_cost_calculation",
+  "python3_tests_ex3.py::test_machine_start_stop",
+  "python3_tests_ex3.py::test_total_cost",
+  "python3_tests_ex3.py::test_total_cost_with_mock",
+  "python3_tests_ex3.py::test_tracker_add_remove",
+  "python3_tests_ex3.py::test_tracker_total_cost"
+]
